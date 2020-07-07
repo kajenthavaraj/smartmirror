@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mirror</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel='stylesheet' href='../css/keyboard.css'>
+  <link rel='stylesheet' href='../css/material-icons.css'>
+</head>
+
+<body>
+
+  <div id="rightwrap">
+      <img id="icon" img draggable="false" class="Main">
+      <div id="temp" class="Main"></div>
+      <div id="weather" class="Main"></div>
+  </div>
+
+  <div id="leftwrap">
+    <div id="clock" class="Main"></div>
+    <div id="date" class="Main"></div>
+    <div id="headline1" transition="filter 0.7s;" class = "news"></div>
+    <div id="headline2" transition="filter 0.7s;"class = "news"></div>
+    <div id="headline3" transition="filter 0.7s;"class = "news"></div>
+    <div id="headline4" transition="filter 0.7s;"class = "news"></div>
+    
+  </div>
+
+  <div id="message" class="Main"></div>
+  <div id = "settingshead" class="SettingsClass">Settings</div>
+  <hr id = "settingsline" class = "SettingsClass"></hr>
+  <div id="settingswrap" class="SettingsClass">
+    <div id="displayconfigbtn_wrap_div">
+      <button id="displayconfigbtn">Display Settings</button>
+    </div>
+    <div id="wifibtn_wrap_div">
+      <button id="wifibtn">Wifi Settings</button>
+    </div>
+    <div id="profilebtn_wrap_div">
+      <button id="profilebtn">User Info</button>
+    </div>
+  </div>
+  <div id = "dSettingsText" class = "dSettingsCls">Display Settings</div>
+  <div id = "dSettings" class = "dSettingsCls">
+    <div id = "tile0" class = "dSettingsCls">
+      <div id = "brightnessTxt" class= "dSettingsCls">Brightness</div>
+      <div id = "slideContainer" class = "dSettingsCls">
+       <input type = "range" id = "brightnessSlider" min = "0" max = "100" value = "100" class = "dSettingsCls">
+      </div>
+      <div id = "brightnessDisplay" class = "dSettingsCls"></div>
+    </div>
+    <div id = "tile1" class = "dSettingsCls">
+      <div id = "timeTxt" class = "dSettingsCls">Time</div>
+      <div id = "time_btn_wrap" class = "dSettingsCls">
+        <button id = "timebtn" class = "dSettingsCls"></button>
+      </div>
+    </div>
+    <div id = "tile2" class = "dSettingsCls">
+      <div id = "dateTxt" class = "dSettingsCls">Date</div>
+      <div id = "date_btn_wrap" class = "dSettingsCls">
+        <button id = "datebtn" class = "dSettingsCls"></button>
+      </div>
+    </div>
+    <div id = "tile3" class = "dSettingsCls">
+      <div id = "weatherTxt" class = "dSettingsCls">Weather</div>
+      <div id = "weather_btn_wrap" class = "dSettingsCls">
+        <button id = "weatherbtn" class = "dSettingsCls"></button>
+      </div>
+    </div>
+    <div id = "tile4" class = "dSettingsCls">
+      <div id = "tempTxt" class = "dSettingsCls">Temperature</div>
+      <div id = "temp_btn_wrap" class = "dSettingsCls">
+        <button id = "tempbtn" class = "dSettingsCls"></button>
+      </div>
+    </div>
+    <div id = "tile5" class = "dSettingsCls">
+      <div id = "newsTxt" class = "dSettingsCls">News</div>
+      <div id = "news_btn_wrap" class= "dSettingsCls">
+        <button id = "newsbtn" class = "dSettingsCls"></button>
+      </div>
+    </div>
+  </div>
+  <div id = "placeholder"></div>
+  <div id = "backbtn_wrap_div">
+    <button id =  "backbtn">Back</button>
+  </div>
+  <!-- <div id="displayconfigbtn_wrap_div" class="Settings">
+    <button id="displayconfigbtn">Display Settings</button>
+  </div>
+  <div id="wifibtn_wrap_div" class="Settings">
+    <button id="wifibtn">Wifi Settings</button>
+  </div>
+  <div id="profilebtn_wrap_div" class="Settings">
+    <button id="profilebtn">User Info</button>
+  </div> -->
+  <!-- <div class="news"> -->
+    <!--<h2 class="title">Recent News</h2>-->
+    <!--remove h2 class and uncomment h2 class above for title-->
+
+  <!-- </div> -->
+  <script>
+    window.setTimeout("closeMessageDiv();", 5000);
+
+    function closeMessageDiv() {
+      document.getElementById("message").style.color = "black";
+    }
+  </script>
+  <div id="connect_text" class="Wifi">Connect to your Wifi Network Below</div>
+  <div id="check" class="Wifi">or check your router for internet connection and restart mirror</div>
+  <!--<div id="enterssid">Enter Wifi Username Below</div>-->
+  <div id="ssid_wrap_div" class="Wifi">
+    <input class="use-keyboard-input" id="ssid" type="text" placeholder="Wifi Username">
+  </div>
+  <!--<div id="enterpsk">Enter Wifi Password Below</div>-->
+  <div id="psk_wrap_div" class="Wifi">
+    <input class="use-keyboard-input" type="password" id="psk" type="text" placeholder="Wifi Password">
+  </div>
+  <div id="btn_wrap_div" class="Wifi">
+    <button id="btn"
+      onclick="wifiConfig(document.getElementById('ssid').value, document.getElementById('psk').value)">Connect</button>
+  </div>
+  <div id="settings"><span class="material-icons">
+      settings
+  </div>
+  <div id="hide" onclick="hide();"><span class="material-icons " id="hide_icon">
+      visibility
+    </span></div>
+  <script src="../js/status.js"></script>
+  <script src="../js/wifi.js"></script>
+  <script src="../js/weather.js"></script>
+  <script src="../js/splash.js"></script>
+  <script src="../js/date.js"></script>
+  <script src="../js/time.js"></script>
+  <script src="../js/news.js"></script>
+  <script src="../js/keyboard.js"></script>
+  <script src="../js/wifi.js"></script>
+  <script src="../js/settings.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+body{
+    background-color: black;
+    transition: background-color 4.5s;
+}
+
+#downloading{
+    color: white;
+    transition: opacity 2.5s, color 4.5s;
+    display: none;
+    font-family: 'Roboto';
+    font-size: 95px;
+    position: fixed;
+    top: 300px;
+    left: 550px;
+    text-align: center;
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+    animation-fill-mode: backwards;
+    animation-name: fadeIn;
+}
+#downloaded{
+    color: white;
+    transition: opacity 2s, color 4.5s;
+    font-size: 100px;
+    position: fixed;
+    font-family: 'Roboto';
+    left: 815px;
+    top: 300px;
+    text-align: center;
+    display: none;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-name: fadeIn;
+}
+#available1{
+    color: white;
+    transition: opacity 2.5s;
+    position: fixed;
+    font-size: 85px;
+    font-family: 'Roboto';
+    top: 225px;
+    left: 286px;
+    text-align: center;
+    display: none;
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+    animation-fill-mode: backwards;
+    animation-name: fadeIn;
+}
+
+#available2{
+    color: white;
+    transition: opacity 2.5s;
+    position: fixed;
+    font-size: 85px;
+    font-family: 'Roboto';
+    top: 375px;
+    left: 724px;
+    text-align: center;
+    display: none;
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+    animation-fill-mode: backwards;
+    animation-name: fadeIn;
+}
+
+#restarting{
+    color: white;
+    transition: opacity 2s;
+    position: fixed;
+    font-size: 95px;
+    font-family: 'Roboto';
+    top: 300px;
+    left: 521px;
+    text-align: center;
+    display: none;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }

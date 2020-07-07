@@ -1,0 +1,103 @@
+body {
+    color: white;
+    background-color: black;
+    font-family: 'Roboto';
+    font-weight: bold;
+    cursor: default;   
+  }
+
+#welcomeMsg{
+    position: relative;
+    top: 200px;
+    text-align: center;
+    font-size: 300px;
+    font-family: 'Roboto';
+    animation: fadeInOut;
+    animation-delay: 2s;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    cursor: default;
+}
+
+
+#enterName{
+    font-family: 'Roboto';
+    position: fixed;
+    left: 573px;
+    top: 125px;
+    font-size: 100px;
+    animation: fadein;
+    animation-delay: 8s;
+    animation-duration: 4s;
+    animation-fill-mode: backwards;
+    transition: opacity 0.5s, left 2s;
+}
+
+#getName{
+    font-family: 'Roboto';
+    position: fixed;
+    left: 736px;
+    top: 325px;
+    font-size: 30px;
+    width: 500px;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-width: 1px;
+    border-color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    animation: fadein;
+    animation-delay: 10s;
+    animation-duration: 4s;
+    animation-fill-mode: backwards;
+    transition: opacity 0.5s, left 2s;
+}
+
+#nextButton{
+    font-family: 'Roboto';
+    position: fixed;
+    font-family: 'Open Sans';
+    font-size: 45px;
+    left: 950px;
+    top: 450px;
+    background-color: black;
+    color: white;
+    border-width: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    opacity: 0;
+    transition: opacity 0.5s, left 2s, color 0.2s;
+}
+
+#nextButton:hover{
+    color: skyblue;
+}
+
+@keyframes fadeInOut{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 100;
+    }
+    75%{
+        opacity: 100;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadein{
+    0% { opacity:0; }
+    75% { opacity:0; }
+    100% { opacity:1; }
+  }
