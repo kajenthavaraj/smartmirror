@@ -736,6 +736,169 @@ body {
   left: 430px;
 }
 
+#pSettingsText{
+  position: fixed;
+  text-align: center;
+  font-size: 50px;
+  left: 639px;
+  top: 135px;
+  display: none;
+  font-family: 'Roboto';
+  font-weight: bold;
+  transition: opacity 0.5s;
+}
+
+#pSettings{
+  position: fixed;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  width: 700px;
+  height: 400px;
+  display: none;
+  background-color: black;
+  color: white;
+  overflow: auto;
+  scrollbar-base-color: black;
+  left: 639px;
+  top: 200px;
+  transition: opacity 0.5s;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#nameTxt{
+  font-size: 35px;
+  width: 200px;
+  top: 27px;
+  position: relative;
+  font-family: 'Roboto';
+  font-weight: bold;
+  opacity: 1;
+  color: white;
+  left: 45px;
+}
+
+#dateStartTxt{
+  font-size: 20px;
+  width: 200px;
+  position: relative;
+  font-family: 'Roboto';
+  font-weight: bold;
+  opacity: 1;
+  color: white;
+  left: 45px;
+  top: 12px;
+}
+
+#versionTxt{
+  position: relative;
+  left: 550px;
+  top: -12px;
+  font-family: 'Roboto';
+  color: white;
+  font-size: 20px;
+  transition: background 0.4s, color 0.4s;
+  width: 91px;
+}
+
+#tile00{
+  position: relative;
+  font-size: 20px;
+  width: 699px;
+  left: 1px;
+  height: 100px;
+  display: none;
+  transition: opacity 0.5s, left 2s, color 0.2s;
+  background-color: rgb(175,175,175,0.1);
+}
+
+#tile01{
+  position: relative;
+  font-size: 20px;
+  display: none;
+  width: 699px;
+  left: 1px;
+  height: 50px;
+  transition: opacity 0.5s, left 2s, color 0.2s;
+  background-color: black
+}
+
+#nameTxt2{
+  position: relative;
+  text-align: right;
+  right: -125px;
+  top: -9px;
+  font-family: 'Roboto';
+  color: white;
+  font-size: 30px;
+  transition: background 0.4s, color 0.4s;
+  width: 400px;
+}
+
+#editNameBtn{
+  position: relative;
+  left: 550px;
+  top: -43px;
+  font-family: 'Roboto';
+  border-color: white;
+  border-width: 1px;
+  background-color: rgb(0,0,0,0);
+  color: white;
+  font-size: 25px;
+  transition: background 0.4s, color 0.4s;
+  display: none;
+}
+
+#confirmBtn{
+  position: relative;
+  left: 550px;
+  top: -5px;
+  width: 27px;
+  height: 27px;
+  border-width: 1px;
+  border-radius: 50%;
+  border-color: white;
+  background: url(../assets/confirmicon.png);
+  display: none;
+}
+
+#cancelBtn{
+  position: relative;
+  left: 585px;
+  top: -32px;
+  width: 27px;
+  height: 27px;
+  border-width: 1px;
+  border-radius: 50%;
+  border-color: white;
+  background: url(../assets/cancelicon.png);
+  display: none;
+}
+
+#nameInput{
+  position: fixed;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 30px;
+  top: 253px;
+  left: 995px;
+  border-color: white;
+  border-width: 1px;
+  border-radius: 5px;
+  width: 165px;
+  height: 39px;
+  right: -125px;
+  text-align: left;
+  background: black;
+  color: white;
+  display: none;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 @keyframes fadeIn{
   0%{
     opacity: 0;

@@ -1,4 +1,5 @@
 const Store = require('../store.js')
+var time = new Date()
 
 
 var intervalId;
@@ -20,7 +21,7 @@ const displaySettings = new Store({
         icon: true,
         weather: true,
         numHeadlines: 4,
-        brightness: 100
+        brightness: 100,
     }
 })
 
@@ -49,6 +50,7 @@ document.getElementById('nextButton').onclick = () => {
                 //console.log(userInfo.get('userName'))
                 userInfo.set('userName', document.getElementById('getName').value)
                 userInfo.set('initialized', true)
+                userInfo.set('dateStarted', time.getDate().toString() + "/" + time.getMonth().toString() + "/" + time.getFullYear().toString())
 
                 displaySettings.set('clock', true)
                 displaySettings.set('date', true)

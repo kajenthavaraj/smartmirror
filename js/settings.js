@@ -17,6 +17,12 @@ var newsbtn = document.getElementById('newsbtn')
 var brightnessSlide = document.getElementById('brightnessSlider')
 var placeholder = document.getElementById('placeholder')
 var brightnessDisplay = document.getElementById('brightnessDisplay')
+var pSettingsClass = document.getElementsByClassName('pSettingsCls')
+var confirmbtn = document.getElementById('confirmBtn')
+var cancelbtn = document.getElementById('cancelBtn')
+var nameInput = document.getElementById('nameInput')
+var nameTxt2 = document.getElementById("nameTxt2")
+var editNameBtn = document.getElementById('editNameBtn')
 
 var btnDisplays = ["Shown", "Hidden"]
 var boolList = [true, false]
@@ -226,6 +232,14 @@ weatherbtn.onmouseleave = () => {
 weatherbtn.onclick = () => {
     pressDisBtn(["weather", "icon"])
     hoverBtn(weatherbtn, "weather")
+    if (displaySettings.get("weather")){
+        
+        document.getElementById("temp").style.right = "130px"
+    }
+    else{
+        document.getElementById("temp").style.right = "1px"
+    }
+    
 }
 
 tempbtn.onmouseover = () => {
@@ -296,7 +310,58 @@ backbtn.onclick = () => {
         settingsClass[i].style.display = 'block';
         settingsClass[i].style.opacity = (brightnessInt + 0.5).toString()
     }
+
+    nameInput.style.display = 'none'
 }
 
 
 
+
+document.getElementById('profilebtn').onclick = () => {
+    changeSettingPg()
+    currentPg = "pSettingsCls"
+    for (var i = 0;  i < pSettingsClass.length; i++){
+        if(pSettingsClass[i] == confirmbtn || pSettingsClass[i] == cancelbtn){}
+        else{
+            pSettingsClass[i].style.display = "block"
+            pSettingsClass[i].style.opacity = (brightnessInt + 0.5).toString();
+        }
+    }
+    
+    document.getElementById("dateStartTxt").innerHTML = "Started on " + userInfo.get('dateStarted')
+    nameTxt2.innerHTML = userInfo.get('userName')
+}
+
+editNameBtn.onclick = () => {
+    editNameBtn.style.display = 'none';
+    confirmbtn.style.display = 'block'
+    cancelbtn.style.display = 'block'
+    
+    nameInput.style.display = 'block'
+    nameInput.value = userInfo.get('userName')
+    nameInput.focus()
+    
+    nameTxt2.style.display = 'none'
+}
+
+cancelbtn.onclick = ()=>{
+    editNameBtn.style.display = 'block'
+    confirmbtn.style.display = 'none'
+    cancelbtn.style.display = 'none'
+    nameInput.style.display = 'none'
+    nameTxt2.style.display = 'block'
+    Keyboard.close();
+}
+
+confirmbtn.onclick = ()=>{
+    userInfo.set('userName', nameInput.value)
+
+    editNameBtn.style.display = 'block'
+    confirmbtn.style.display = 'none'
+    cancelbtn.style.display = 'none'
+    nameInput.style.display = 'none'
+    nameTxt2.style.display = 'block'
+
+    nameTxt2.innerHTML = nameInput.value
+    Keyboard.close();
+}
